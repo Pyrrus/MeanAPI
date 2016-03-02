@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <title>FIRST TIME MAKEING AN API USING MEANS</title>
+</head>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <h1>FIRST TIME MAKEING AN API USING MEANS (List App)</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name of attack</th>         
+          <th>Damage</th>
+          <th>Description</th>
+          <th>Type of attack</th>
+          <th>Actions</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" ng-model="attack.name"></td>
+          <td><input class="form-control" ng-model="attack.damage"></td>
+          <td><textarea class="form-control" ng-model="attack.des">></textarea></td>
+          <td><input class="form-control" ng-model="attack.type"></td>
+          <td><button class="btn btn-primary" ng-click="addattack()">Add Contact</button></td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button></td>
+          <td><button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="attack in attacklist">
+          <td>{{attack.name}}</td>
+          <td>{{attack.damage}}</td>
+          <td>{{attack.des}}</td>
+          <td>{{attack.type}}</td>
+          <td><button class="btn btn-primary" ng-click="roll(attack._id)">Roll</button></td>
+          <td><button class="btn btn-danger" ng-click="remove(attack._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(attack._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
