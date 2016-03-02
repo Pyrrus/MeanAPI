@@ -1,0 +1,5 @@
+npm install body-parser
+npm install express
+npm install mongojs
+
+Also you need to have mongodb install and running.
